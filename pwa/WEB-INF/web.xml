@@ -1,0 +1,21 @@
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <servlet>
+        <servlet-name>SteganographyServlet</servlet-name>
+        <servlet-class>com.example.steganography.SteganographyServlet</servlet-class>
+        <multipart-config>
+            <location>/tmp</location>
+            <max-file-size>5242880</max-file-size> <!-- 5MB -->
+            <max-request-size>20971520</max-request-size> <!-- 20MB -->
+            <file-size-threshold>1048576</file-size-threshold> <!-- 1MB -->
+        </multipart-config>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SteganographyServlet</servlet-name>
+        <url-pattern>/api</url-pattern>
+    </servlet-mapping>
+</web-app>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#007BFF">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Steganography Tool</title>
+</head>
+<body>
+<div class="container">
+    <h1>Steganography Tool</h1>
+    <form id="stegForm">
+        <label for="action">Action:</label>
+        <select id="action" name="action">
+            <option value="encode">Encode</option>
+            <option value="decode">Decode</option>
+        </select>
+
+        <label for="secretKey">Secret Key (16 characters):</label>
+        <input type="text" id="secretKey" name="secretKey" maxlength="16" required>
+
+        <label for="image">Image:</label>
+        <input type="file" id="image" name="image" accept="image/png" required>
+
+        <div id="messageInput">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" placeholder="Enter the message to encode..."></textarea>
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <div class="output" id="output"></div>
+</div>
+<script src="script/script.js"></script>
+<script>
+    // Register the service worker
+    if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+            .register("sw.js")
+            .then(() => console.log("Service Worker Registered"))
+            .catch(error => console.error("Service Worker Registration Failed:", error));
+    }
+</script>
+</body>
+</html>
