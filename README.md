@@ -28,4 +28,4 @@ This project implements a web-based steganography application that enables users
 ## Prerequisites
 - **Java**: JDK 8 or later.
 - **Maven**: Build automation tool to manage dependencies and compile the project.
-- **Web Server**: Apache Tomcat or any servlet container.
+- **Web Server**: Wildfly.
